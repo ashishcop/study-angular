@@ -1,0 +1,28 @@
+<select (change)="onSelectionChange($any($event.target).value)">
+    <option value="-1">not selected</option>
+    <option *ngFor="let count of counter()" [value]="count">{{ count }}</option>
+</select>
+
+
+<div>
+    <h3>Add Vehicles</h3>
+
+    <label for="vehichleName">Name</label>
+    <input name="vehichleName" type="text" [(ngModel)]="vehichleName" />
+    <label for="vehichlePrice">Price</label>
+    <input type="range" min="100" max="1000" [(ngModel)]="vehichlePrice">
+
+    <button (click)="buyVehicles({name:vehichleName,price:vehichlePrice,quantity:quantity })">Add
+        Vehicle</button>
+</div>
+
+<div>
+    <div *ngFor="let vehicle of vehicles()">
+        Name: {{ vehicle.name }} price: {{ vehicle.price }} quantity: {{ vehicle.quantity }} total Cost : {{
+        vehicle.totalCost}}
+    </div>
+</div>
+
+<div>
+    Total Bill : {{ totalBill()}}
+</div>

@@ -1,0 +1,5 @@
+@if(carClickCount$ | async) {
+<div>Car clicks : {{ carClickCount$ | async }}</div>
+}
+
+<button (click)="submit()">car click</button>

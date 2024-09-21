@@ -1,0 +1,11 @@
+.column {
+  border: 0.1rem solid rgb(49, 50, 50);
+  min-height: 400px;
+  width: 32%;
+  text-align: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}

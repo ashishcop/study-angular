@@ -1,0 +1,31 @@
+<div class="column">
+    <label>Customer</label>
+    <input type="text" [(ngModel)]="customer" (ngModelChange)="resetCustomer($event)">
+    <ul>
+        <li *ngFor="let customer of customer$ | async" (click)="onCustomerSelect($event,customer)">{{
+            customer.name }}</li>
+    </ul>
+
+    <button (click)="resetCustomer($event)">reset</button>
+
+</div>
+<div class="column">
+    <label>Product</label>
+    <input type="text" [(ngModel)]="product" (ngModelChange)="resetProduct($event)">
+    <ul>
+        <li *ngFor="let product of product$ | async" (click)="onProductSelect($event,product)">{{
+            product.name }}</li>
+    </ul>
+
+    <button (click)="resetProduct($event)">reset</button>
+
+</div>
+<div class="column">
+    <label>Center</label>
+    <input type="text" [(ngModel)]="center">
+    <ul>
+        <li [value]="center.id" *ngFor="let center of center$ | async" (click)="onCenterSelect($event,center)">{{
+            center.name }}</li>
+    </ul>
+
+</div>
